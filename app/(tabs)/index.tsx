@@ -33,7 +33,6 @@ type Unit = {
 
 type Lesson = { id: string; title: string };
 
-// Dummy lessons data
 const dummyLessons: Lesson[] = [
   { id: "1", title: "Lesson 1: Greetings" },
   { id: "2", title: "Lesson 2: Numbers" },
