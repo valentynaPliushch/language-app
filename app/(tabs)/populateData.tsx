@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { API_URL } from "../../config";
 
 const AddWordScreen = () => {
   const [kanji, setKanji] = useState("");
@@ -9,7 +10,7 @@ const AddWordScreen = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://192.168.178.180:3000/words", {
+      const response = await fetch(`${API_URL}/words`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

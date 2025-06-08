@@ -1,4 +1,3 @@
-import { Picker } from "@react-native-picker/picker";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import {
@@ -12,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import DropDownPicker from "react-native-dropdown-picker";
 import Modal from "react-native-modal";
 
 const { width: screenWidth } = Dimensions.get("window");
@@ -45,13 +45,15 @@ const dummyLessons: Lesson[] = [
 export default function Index() {
   const [lessons, setLessons] = useState<Unit[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedLevel, setSelectedLevel] = useState(jlptLevels[0].value);
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(jlptLevels[0].value);
+  const [items, setItems] = useState(jlptLevels);
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [selectedItemKey, setSelectedItemKey] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    fetch("http://192.168.178.180:3000/lessons") // Replace with your IP on same WiFi
+    fetch("https://language-app-ws2r.onrender.com/lessons")
       .then((res) => res.json())
       .then((data) => {
         setLessons(data);
@@ -105,21 +107,14 @@ export default function Index() {
   return (
     <View style={styles.pageContainer}>
       <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={selectedLevel}
-          onValueChange={(itemValue: string, itemIndex: number) =>
-            setSelectedLevel(itemValue)
-          }
-          style={styles.picker}
-        >
-          {jlptLevels.map((level) => (
-            <Picker.Item
-              key={level.value}
-              label={level.label}
-              value={level.value}
-            />
-          ))}
-        </Picker>
+        <DropDownPicker
+          open={open}
+          value={value}
+          items={items}
+          setOpen={setOpen}
+          setValue={setValue}
+          setItems={setItems}
+        />
       </View>
       <View style={styles.listContainer}>
         <FlatList
