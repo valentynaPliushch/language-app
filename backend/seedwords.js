@@ -1,3 +1,4 @@
+import fs from "fs/promises";
 import mongoose from "mongoose";
 
 const url =
@@ -28,18 +29,30 @@ const Word = mongoose.model("Word", wordSchema);
 // ---------------- SEED FUNCTION ----------------
 
 async function seed() {
-  const unit = await mongoose.model("Unit").findOne().sort({ order: 1 });
+  const unit = await Unit.findOne().sort({ order: 1 });
 
   if (!unit) {
     throw new Error("❌ No units found. Add a Unit before adding words.");
   }
-  await Word.create({
+  const file = await fs.readFile("./backend/words.json", "utf-8");
+  const words = JSON.parse(file);
+  const count = await Word.countDocuments({ unitId: unit._id });
+
+  const wordsToInsert = words.map((word, index) => ({
+    ...word,
     unitId: unit._id,
-    kanji: "水",
-    reading: "みず",
-    meaning: "water",
-    order: 1,
-  });
+    order: count + 1 + index,
+  }));
+
+  await Word.insertMany(wordsToInsert);
+
+  // await Word.create({
+  //   unitId: unit._id,
+  //   kanji: "水",
+  //   reading: "みず",
+  //   meaning: "water",
+  //   order: 1,
+  // });
 
   console.log("✅ Seeding complete!");
   mongoose.disconnect();

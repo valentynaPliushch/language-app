@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
-import { API_URL } from "../../config";
+import { API_URL } from "../../backend/config";
+import KanjiListScreen from "../kanji-list";
 
 const AddWordScreen = () => {
   const [kanji, setKanji] = useState("");
   const [reading, setReading] = useState("");
   const [meaning, setMeaning] = useState("");
+  const [showWords, setShowWords] = useState(false);
   const unitId = "683c6a3a72e30e7dea782eac";
 
   const handleSubmit = async () => {
@@ -32,6 +34,13 @@ const AddWordScreen = () => {
 
   return (
     <View style={styles.container}>
+      <View className="flex-1 p-20">
+        <Button
+          title={showWords ? "Hide words" : "Show words"}
+          onPress={() => setShowWords((prev) => !prev)}
+        />
+        {showWords && <KanjiListScreen />}
+      </View>
       <Text>Kanji</Text>
       <TextInput style={styles.input} value={kanji} onChangeText={setKanji} />
 

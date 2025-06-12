@@ -34,7 +34,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true
@@ -45,6 +46,12 @@
         "projectId": "542671f4-4cc2-4dd2-9bda-889afe753673"
       }
     },
-    "owner": "valentyna123"
+    "owner": "valentyna123",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/542671f4-4cc2-4dd2-9bda-889afe753673"
+    }
   }
 }

@@ -1,0 +1,200 @@
+[
+  {
+    "id": 5,
+    "kanji": "払います",
+    "reading": "はらいます",
+    "meaning": "Pay"
+  },
+  {
+    "id": 6,
+    "kanji": "返します",
+    "reading": "かえします",
+    "meaning": "Give back, return"
+  },
+  {
+    "id": 7,
+    "kanji": "出かけます",
+    "reading": "でかけます",
+    "meaning": "To depart, to go out"
+  },
+  {
+    "id": 8,
+    "kanji": "脱ぎます",
+    "reading": "ぬぎます",
+    "meaning": "Take off (clothes, shoes...)"
+  },
+  {
+    "id": 9,
+    "kanji": "持って行きます",
+    "reading": "もっていきます",
+    "meaning": "Take (something)"
+  },
+  {
+    "id": 10,
+    "kanji": "持って来ます",
+    "reading": "もってきます",
+    "meaning": "Bring (something)"
+  },
+  {
+    "id": 11,
+    "kanji": "心配します",
+    "reading": "しんぱいします",
+    "meaning": "Worry"
+  },
+  {
+    "id": 12,
+    "kanji": "残業します",
+    "reading": "ざんぎょうします",
+    "meaning": "Work overtime"
+  },
+  {
+    "id": 13,
+    "kanji": "出張します",
+    "reading": "しゅっちょうします",
+    "meaning": "Go on a business trip"
+  },
+  {
+    "id": 14,
+    "kanji": "[薬を] 飲みます",
+    "reading": "[くすりを] のみます",
+    "meaning": "Take medicine"
+  },
+  {
+    "id": 15,
+    "kanji": "[おふろに入ります",
+    "reading": "[おふろに] はいります",
+    "meaning": "Take a bath"
+  },
+  {
+    "id": 16,
+    "kanji": "大切な",
+    "reading": "たいせつ [な]",
+    "meaning": "Important, precious"
+  },
+  {
+    "id": 17,
+    "kanji": "大丈夫 [な]",
+    "reading": "だいじょうぶ [な]",
+    "meaning": "All right"
+  },
+  {
+    "id": 18,
+    "kanji": "危ない",
+    "reading": "あぶない",
+    "meaning": "Dangerous, risky"
+  },
+  {
+    "id": 19,
+    "kanji": "問題",
+    "reading": "もんだい",
+    "meaning": "Question, problem"
+  },
+  {
+    "id": 20,
+    "kanji": "答え",
+    "reading": "こたえ",
+    "meaning": "Answer, reply, response"
+  },
+  {
+    "id": 21,
+    "kanji": "禁煙",
+    "reading": "きんえん",
+    "meaning": "No smoking"
+  },
+  {
+    "id": 22,
+    "kanji": "[健康] 保険証",
+    "reading": "[けんこう] ほけんしょう",
+    "meaning": "Health insurance card"
+  },
+  {
+    "id": 23,
+    "kanji": "風邪",
+    "reading": "かぜ",
+    "meaning": "Cold, influenza"
+  },
+  {
+    "id": 24,
+    "kanji": "熱",
+    "reading": "ねつ",
+    "meaning": "Heat"
+  },
+  {
+    "id": 25,
+    "kanji": "病気",
+    "reading": "びょうき",
+    "meaning": "Illness, disease"
+  },
+  {
+    "id": 26,
+    "kanji": "薬",
+    "reading": "くすり",
+    "meaning": "Medicine"
+  },
+  {
+    "id": 27,
+    "kanji": "おふろ",
+    "reading": "",
+    "meaning": "Bath"
+  },
+  {
+    "id": 28,
+    "kanji": "上着",
+    "reading": "うわぎ",
+    "meaning": "Coat, jacket"
+  },
+  {
+    "id": 29,
+    "kanji": "下着",
+    "reading": "したぎ",
+    "meaning": "Underwear"
+  },
+  {
+    "id": 30,
+    "kanji": "先生",
+    "reading": "せんせい",
+    "meaning": "Teacher, master, doctor"
+  },
+  {
+    "id": 31,
+    "kanji": "2,3日",
+    "reading": "2,3にち",
+    "meaning": "Some days"
+  },
+  {
+    "id": 32,
+    "kanji": "2, 3~",
+    "reading": "",
+    "meaning": "Some ~"
+  },
+  {
+    "id": 33,
+    "kanji": "~までに",
+    "reading": "",
+    "meaning": "Before ~, by ~ (indicating time limit)"
+  },
+  {
+    "id": 34,
+    "kanji": "ですから",
+    "reading": "",
+    "meaning": "Therefore, so"
+  },
+  {
+    "id": 35,
+    "kanji": "どうしましたか",
+    "reading": "",
+    "meaning": "What's the matter?"
+  },
+  {
+    "id": 36,
+    "kanji": "[のどが] 痛いです",
+    "reading": "[のどが] いたいです",
+    "meaning": "Have a pain in [~ throat]"
+  },
+  {
+    "id": 37,
+    "kanji": "お大事に",
+    "reading": "おだいじに",
+    "meaning": "Take care of yourself (said to people who are ill)"
+  }
+]
