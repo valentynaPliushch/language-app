@@ -1,0 +1,75 @@
+[
+  { "kanji": "できます", "reading": "", "meaning": "Be able to, can" },
+  { "kanji": "洗います", "reading": "あらいます", "meaning": "To wash" },
+  {
+    "kanji": "弾きます",
+    "reading": "ひきます",
+    "meaning": "Play (stringed instrument or piano...)"
+  },
+  { "kanji": "歌います", "reading": "うたいます", "meaning": "To sing" },
+  {
+    "kanji": "集めます",
+    "reading": "あつめます",
+    "meaning": "Collect, gather"
+  },
+  { "kanji": "捨てます", "reading": "すてます", "meaning": "Throw away" },
+  { "kanji": "換えます", "reading": "かえます", "meaning": "Exchange, change" },
+  { "kanji": "運転します", "reading": "うんてんします", "meaning": "Drive" },
+  {
+    "kanji": "予約します",
+    "reading": "よやくします",
+    "meaning": "Reserve, book"
+  },
+  {
+    "kanji": "見学します",
+    "reading": "けんがくします",
+    "meaning": "Visit some place for study"
+  },
+  { "kanji": "ピアノ", "reading": "", "meaning": "Piano" },
+  { "kanji": "~メートル", "reading": "", "meaning": "~ meter" },
+  { "kanji": "国際~", "reading": "こくさい~", "meaning": "International" },
+  { "kanji": "現金", "reading": "げんきん", "meaning": "Cash, ready money" },
+  { "kanji": "趣味", "reading": "しゅみ", "meaning": "Hobby, pastime" },
+  { "kanji": "日記", "reading": "にっき", "meaning": "Diary, journal" },
+  { "kanji": "お祈り", "reading": "おいのり", "meaning": "Prayer" },
+  {
+    "kanji": "課長",
+    "reading": "かちょう",
+    "meaning": "Section manager, section chief"
+  },
+  {
+    "kanji": "部長",
+    "reading": "ぶちょう",
+    "meaning": "Head of a section or department"
+  },
+  { "kanji": "社長", "reading": "しゃちょう", "meaning": "Company president" },
+  { "kanji": "動物", "reading": "どうぶつ", "meaning": "Animal" },
+  { "kanji": "馬", "reading": "うま", "meaning": "Horse" },
+  {
+    "kanji": "ヘえ",
+    "reading": "",
+    "meaning": "Really! (used when expressing surprise)"
+  },
+  {
+    "kanji": "それはおもしろいですね",
+    "reading": "",
+    "meaning": "That must be interesting"
+  },
+  {
+    "kanji": "なかなか",
+    "reading": "",
+    "meaning": "Not easily (used with negatives)"
+  },
+  {
+    "kanji": "牧場",
+    "reading": "ぼくじょう",
+    "meaning": "(1) farm (livestock), (2) pasture land, grazing land"
+  },
+  { "kanji": "ほんとうですか", "reading": "", "meaning": "Really?" },
+  { "kanji": "ぜひ", "reading": "", "meaning": "By all means" },
+  {
+    "kanji": "ビートルズ",
+    "reading": "",
+    "meaning": "Beatles, a popular music band in England"
+  }
+]

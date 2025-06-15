@@ -41,10 +41,11 @@ export default function KanjiListScreen() {
       <FlatList
         data={words}
         keyExtractor={(item) => item._id}
-        renderItem={({ item }) => (
-          <View className="bg-white p-4 rounded-lg mb-3 flex-row items-center shadow-md">
-            <Text className="text-3xl mr-4">{item.kanji}</Text>
-            <View className="flex-1">
+        renderItem={({ item, index }) => (
+          <View className="bg-white p-2 rounded-lg mb-3 flex-row items-center shadow-md">
+            <Text className="mr-5 text-3xl">{index + 1}</Text>
+            <View className="flex-1 flex-col">
+              <Text className="text-3xl mr-4">{item.kanji}</Text>
               <Text className="text-base text-gray-800">{item.reading}</Text>
               <Text className="text-sm text-gray-600">{item.meaning}</Text>
             </View>

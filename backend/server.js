@@ -2,7 +2,10 @@ import bcrypt from "bcryptjs";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
+import { Lesson, Unit, User, Word } from "./models.js";
+// import authMiddleware from "./middleware";
 
 const app = express();
 
@@ -12,30 +15,10 @@ dotenv.config();
 
 await mongoose.connect(process.env.MONGODB_URI, { dbName: "Japanese" });
 
-const lessonSchema = new mongoose.Schema({
-  title: String,
-  order: Number,
-  unitId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Unit",
-  },
-});
-
-const wordSchema = new mongoose.Schema({
-  unitId: mongoose.Types.ObjectId,
-  kanji: String,
-  reading: String,
-  meaning: String,
-  order: Number,
-});
-const userSchema = new mongoose.Schema({
-  email: { type: String, unique: true, required: true },
-  password: { type: String, required: true },
-});
-
 const Lesson = mongoose.model("Lesson", lessonSchema);
 const Word = mongoose.model("Word", wordSchema);
 const User = mongoose.model("User", userSchema);
+const Unit = mongoose.model("Unit", unitSchema);
 
 app.get("/lessons", async (req, res) => {
   const lessons = await Lesson.find().sort({ order: 1 });
@@ -46,7 +29,7 @@ app.post("/register", async (req, res) => {
   try {
     const { email, password } = req.body;
     const existingUser = await User.findOne({ email });
-    if (!existingUser)
+    if (existingUser)
       return res.status(401).json({ error: "User already exists" });
 
     const salt = await bcrypt.genSalt(10);
@@ -65,14 +48,14 @@ app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = User.findOne({ email });
+    const user = await User.findOne({ email });
     if (!user) return res.status(401).json({ error: "Email not found" });
 
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) return res.status(401).json({ error: "Invalid password" });
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "4h",
+      expiresIn: "12h",
     });
 
     res.json({ token });
@@ -115,5 +98,15 @@ app.get("/words", async (req, res) => {
 // app.get("/profile", authMiddleware, (req, res) => {
 //   res.json({ message: "Welcome!" });
 // });
+
+app.get("/units", async (req, res) => {
+  try {
+    const units = await Unit.find().sort({ order: 1 });
+    res.json(units);
+  } catch (err) {
+    console.error("❌ Failed to fetch units:", err);
+    res.status(500).json({ error: "Failed to get units" });
+  }
+});
 
 app.listen(3000, () => console.log("Server running"));

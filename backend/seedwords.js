@@ -14,7 +14,7 @@ const unitSchema = new mongoose.Schema({
 });
 
 const wordSchema = new mongoose.Schema({
-  unitId: mongoose.Types.ObjectId,
+  unitId: { type: mongoose.Types.ObjectId, ref: "Unit" },
   kanji: String,
   reading: String,
   meaning: String,
@@ -29,30 +29,27 @@ const Word = mongoose.model("Word", wordSchema);
 // ---------------- SEED FUNCTION ----------------
 
 async function seed() {
-  const unit = await Unit.findOne().sort({ order: 1 });
-
+  let unit = await Unit.findOne({ order: 2 });
   if (!unit) {
-    throw new Error("❌ No units found. Add a Unit before adding words.");
+    unit = await Unit.create({
+      title: "Unit 2",
+      order: 2,
+    });
+  } else {
+    await Word.deleteMany({ unitId: unit._id });
+    console.log("🗑️ Старі слова видалені");
   }
-  const file = await fs.readFile("./backend/words.json", "utf-8");
+
+  const file = await fs.readFile("./backend/wordsUnit18.json", "utf-8");
   const words = JSON.parse(file);
-  const count = await Word.countDocuments({ unitId: unit._id });
 
   const wordsToInsert = words.map((word, index) => ({
     ...word,
     unitId: unit._id,
-    order: count + 1 + index,
+    order: 1 + index,
   }));
 
   await Word.insertMany(wordsToInsert);
-
-  // await Word.create({
-  //   unitId: unit._id,
-  //   kanji: "水",
-  //   reading: "みず",
-  //   meaning: "water",
-  //   order: 1,
-  // });
 
   console.log("✅ Seeding complete!");
   mongoose.disconnect();
